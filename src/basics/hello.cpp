@@ -1,10 +1,15 @@
 #include<iostream>
 
 using namespace std;
-
+//extern int x;
 int main(){
-    int fav_number = 0;
-    cout << "Yo, why don't you tell me your fav number foo!\n";
-    cin >> fav_number;
-    cout << fav_number << " Cool beans man mine too!\n";
+    int age;
+    cout << "Yo, why don't you tell me how old are you foo ??\n";
+    cin >> age;
+    if(age<17 || age>95){
+        cout << age << " Not eligible to vote go away affura!!\n";
+    }
+    else{
+    cout << "Cool, you can vote but I'm not gonna tell to whom\n";
+    }
 }
