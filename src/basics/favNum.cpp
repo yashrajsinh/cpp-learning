@@ -1,9 +1,8 @@
 #include<iostream>
 using namespace std;
 
-int main(int a) {
-   
-    string s;
+int main() {
+   int a;
     cout << "\n-----------------------------------------------------------------\n";
     cout << "Yo! my man tell me your fav number between 1 and 100:\t";
     cin >> a;

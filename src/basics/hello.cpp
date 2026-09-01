@@ -10,6 +10,6 @@ int main(){
         cout << age << " Not eligible to vote go away affura!!\n";
     }
     else{
-    cout << "Cool, you can vote but I'm not gonna tell to whom\n";
+    cout << "Cool, you can vote but do you really wanna ??\n";
     }
 }
