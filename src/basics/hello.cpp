@@ -1,7 +1,7 @@
 #include<iostream>
 
 using namespace std;
-//extern int x;
+
 int main(){
     int age;
     cout << "Yo, why don't you tell me how old are you foo ??\n";
