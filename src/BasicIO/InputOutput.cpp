@@ -10,12 +10,11 @@ int main(){
   cout << "One more number bro ->\t";
   cin >> value_second;
   cout << "You wrote " << input_value << " and " << value_second << endl;
-
-
+  cout << "Ok bye! " << endl; 
   /*
     We could also have two inputs at a time
   */
-  
+
   cout << "Bruv enter 2 number with a spcae->\t";
   cin >> input_value >> value_second;
   cout << "So,you've got " << input_value << " and " << value_second << endl;
