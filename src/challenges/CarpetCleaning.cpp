@@ -1,14 +1,6 @@
 #include<iostream>
 using namespace std;
 int main(){
-   
-   
-
-
-
-
-
-
 
     const double price_per_small_room {25};
     const double price_per_large_room {35};
@@ -30,7 +22,6 @@ int main(){
        << "Total Small Rooms : " << number_of_small_rooms 
        << "\nTotal Large Rooms : " << number_of_large_rooms;
     
-
     double total_cleaning_cost{0};
        total_cleaning_cost = {
         (price_per_large_room * number_of_large_rooms) + 
