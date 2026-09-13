@@ -1,39 +1,70 @@
 #include<iostream>
 using namespace std;
 int main(){
+
+
     /* 
-    ******************
-    1. Array Declaration 
-    ******************
+    **************************
+     1. Array Declaration 
+    **************************
     int a[5]{1, 2, 3, 4, 5};  // size + values
     int b[]{1, 2, 3, 4, 5};   // compiler determines size
 
     int c[5]{1, 2};           // remaining → 0
     int d[5]{};               // all → 0
     ****/
-    cout << "Arary Program\n";
-
+    cout << "Array Program\n";
+    int numbers [] {10,20,555,30,40};
     /*
-    ****************
-    2. ARRAY PRINTING ALL ELEMENTS 
-    ****************
-    int values []{12,5,6,123,231};
+    ********************************
+     2. ARRAY PRINTING ALL ELEMENTS 
+    ********************************
     for(int i{0} ; i<(sizeof(values) / sizeof(values[0]));i++){
         cout << values[i] << "\n";
     }
     */
   
     /*
-    3. FIND THE SUM 
-    */
-    int numbers [] {10,20,30,40};
+    ************************
+     3. FIND THE SUM 
+    ************************
     int size = (sizeof(numbers) / sizeof(numbers[0]));
     int sum {0};
     for(int i{0}; i<size;i++){
     sum += numbers[i];
     }
     cout << "Average " << (sum/size) << endl;
+    */
   
+    /*
+    ********************************
+     4. FIND THE LARGEST NUMBER 
+    ********************************
+    int largest_number{0};
+    for(int i=0; i< ((sizeof(numbers) / sizeof(numbers[i]))); i++){
+        if(numbers[i] > largest_number)
+        {
+            largest_number = numbers[i];
+        }
+    }
+    cout << "Largest Number in array is " << largest_number << endl;
+    */
+    
+    /*
+    ********************************
+     5. FIND THE INDEX OF A NUMBER
+    ********************************
+    */
+    int index_value{0};
+    int number {555};
+    for(int i=0; i< (sizeof(numbers)/sizeof(numbers[0]));i++){
+        if(numbers[i] == number){
+            index_value = i;
+        }
+    }
+    cout << "At " << index_value << endl;
+
+
 
 
 }
