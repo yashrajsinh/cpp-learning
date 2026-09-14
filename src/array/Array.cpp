@@ -54,17 +54,37 @@ int main(){
     ********************************
      5. FIND THE INDEX OF A NUMBER
     ********************************
-    */
     int index_value{0};
     int number {555};
     for(int i=0; i< (sizeof(numbers)/sizeof(numbers[0]));i++){
         if(numbers[i] == number){
             index_value = i;
+            break;
         }
     }
     cout << "At " << index_value << endl;
-
-
-
-
+    */
+   
+    /*
+    ********************************
+     7. FIND SECOND LARGEST ELEMENT 
+    ********************************
+    */
+   
+    /*
+     ********************************
+        8. REVERSE AN ARRAY
+     ********************************
+    */
+    int size = (sizeof(numbers) / sizeof(numbers[0]));
+    int temp{0};
+    for(int i{0}; i<(size/2);i++){
+        temp = numbers[i];
+        numbers[i] = numbers[size-1-i];
+        numbers[size-1-i] = temp;
+    }
+    
+    for(int i{0}; i<size;i++){
+       cout << numbers[i] << endl;
+    } 
 }
