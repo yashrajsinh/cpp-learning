@@ -14,14 +14,15 @@ int main(){
     int d[5]{};               // all → 0
     ****/
     cout << "Array Program\n";
-    int numbers [] {10,20,555,30,40};
+    int numbers [] {0,10,20,0,555,0,30,40};
     /*
     ********************************
      2. ARRAY PRINTING ALL ELEMENTS 
     ********************************
     for(int i{0} ; i<(sizeof(values) / sizeof(values[0]));i++){
         cout << values[i] << "\n";
-    }
+    }++
+
     */
   
     /*
@@ -73,9 +74,8 @@ int main(){
    
     /*
      ********************************
-        8. REVERSE AN ARRAY
+        8. REVERSE AN ARRAY (Without declaring a new ARRAY)
      ********************************
-    */
     int size = (sizeof(numbers) / sizeof(numbers[0]));
     int temp{0};
     for(int i{0}; i<(size/2);i++){
@@ -83,8 +83,42 @@ int main(){
         numbers[i] = numbers[size-1-i];
         numbers[size-1-i] = temp;
     }
-    
     for(int i{0}; i<size;i++){
        cout << numbers[i] << endl;
     } 
+    */
+    /*
+
+    ********************************************
+     9. MOVING ALL ZEROS TO THE END 
+    ***********************************************
+    
+    */
+
+   int size = (sizeof(numbers) / sizeof(numbers[0]));
+    int zero_index{0};
+    for(int i{0}; i<size;i++){
+        if(numbers[i] == 0){
+            if(numbers[i+1] == 0){
+            temp = i;
+            temp = numbers[i+=1];
+            numbers[i+=1] = numbers[i];
+            numbers[i] = temp;
+
+            }else{
+    cout << "numbers " << "[" << i << "]" << numbers[i] << " Temp " << temp << " numbers[i+1] " << numbers[i+1] << endl;
+           temp = numbers[i+1];
+            numbers[i+1] = numbers[i];
+            numbers[i] = temp;
+
+            }
+        
+        }
+       
+    }
+    for(int i{0}; i<size;i++){
+        cout << numbers[i] << endl;
+    }
+
+
 }
