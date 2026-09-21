@@ -14,7 +14,7 @@ int main(){
     int d[5]{};               // all → 0
     ****/
     cout << "Array Program\n";
-    int numbers [] {0,10,20,0,555,0,30,40};
+    int numbers [] {1, 3, 4, 3, 5, 1};
     /*
     ********************************
      2. ARRAY PRINTING ALL ELEMENTS 
@@ -92,32 +92,51 @@ int main(){
     ********************************************
      9. MOVING ALL ZEROS TO THE END 
     ***********************************************
-    
+    int size = (sizeof(numbers) / sizeof(numbers[0]));
+    int zero_index{0};
+
+    for (int i{0}; i < size; i++) {
+
+    if (numbers[i] != 0) {
+
+        if (numbers[zero_index] == 0) {
+            int temp = numbers[i];
+            numbers[i] = numbers[zero_index];
+            numbers[zero_index] = temp;
+        }
+        zero_index++;
+    }
+    }
+
+    for (int i{0}; i < size; i++) {
+    cout << numbers[i] << endl;
+    }
     */
 
-   int size = (sizeof(numbers) / sizeof(numbers[0]));
-    int zero_index{0};
-    for(int i{0}; i<size;i++){
-        if(numbers[i] == 0){
-            if(numbers[i+1] == 0){
-            temp = i;
-            temp = numbers[i+=1];
-            numbers[i+=1] = numbers[i];
-            numbers[i] = temp;
+    /*
+    ********************************************
+     10. Find Duplicate Elements
+     Input: [1, 3, 4, 3, 5, 1]
 
-            }else{
-    cout << "numbers " << "[" << i << "]" << numbers[i] << " Temp " << temp << " numbers[i+1] " << numbers[i+1] << endl;
-           temp = numbers[i+1];
-            numbers[i+1] = numbers[i];
-            numbers[i] = temp;
+     Output:
+        1
+        3
+    ********************************************
+    */
+    int size = (sizeof(numbers) / sizeof(numbers[0]));
+  
 
+    for(int i{0};i<size; i++){
+        bool found = false; //set false eveytime so our logic doesn't break
+        for(int j{i+1};j<size;j++){
+            if(numbers[i] == numbers[j]){
+                found = true;
+                break; //if we wanted to know how many times this could have been remvoed 
             }
-        
         }
-       
-    }
-    for(int i{0}; i<size;i++){
-        cout << numbers[i] << endl;
+        if(found){
+            cout << numbers[i] << endl; //print index value directly so no extra var requires 
+        }
     }
 
 
