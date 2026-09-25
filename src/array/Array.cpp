@@ -14,7 +14,7 @@ int main(){
     int d[5]{};               // all → 0
     ****/
     cout << "Array Program\n";
-    int numbers [] {1, 3, 4, 3, 5, 1};
+    int numbers [] {1, 4, 2, 5, 3};
     /*
     ********************************
      2. ARRAY PRINTING ALL ELEMENTS 
@@ -116,16 +116,15 @@ int main(){
     /*
     ********************************************
      10. Find Duplicate Elements
+    ***********************************************
      Input: [1, 3, 4, 3, 5, 1]
 
      Output:
         1
         3
-    ********************************************
-    */
-    int size = (sizeof(numbers) / sizeof(numbers[0]));
-  
 
+
+    int size = (sizeof(numbers) / sizeof(numbers[0]));
     for(int i{0};i<size; i++){
         bool found = false; //set false eveytime so our logic doesn't break
         for(int j{i+1};j<size;j++){
@@ -138,6 +137,34 @@ int main(){
             cout << numbers[i] << endl; //print index value directly so no extra var requires 
         }
     }
+    ********************************************
+    */
 
+    /*
+    ********************************************
+     10. Check if Array is Sorted
+    ********************************************
+    [1, 2, 3, 4, 5] → Sorted
+    [1, 4, 2, 5, 3] → Not sorted
+    *******************************************
+    int size = (sizeof(numbers) / sizeof(numbers[0]));
+     bool isSorted = true;
+    for(int i=0;i<size-1;i++){
+            if(numbers[i] > numbers[i+1]){
+                isSorted = false;
+                break;
+            }
+    }
+      if(isSorted){
+            cout << "Array is Sorted" << endl;
+        }else {
+        cout << "Array not sorted" << endl;
+        }
+        
+    */
 
+     /*
+    ********************************************
+    Find the Difference Between Maximum and Minimum
+    *******************************************
 }
