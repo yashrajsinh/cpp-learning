@@ -165,6 +165,6 @@ int main(){
 
      /*
     ********************************************
-    Find the Difference Between Maximum and Minimum
+     Find the Difference Between Maximum and Minimum
     *******************************************
 }

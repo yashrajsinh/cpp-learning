@@ -36,7 +36,7 @@ int main(){
     numbers.push_back(50);
   
   */
-  vector<int> numbers{10,20,30,40,50};
+ 
 
   /*
   ******************************
@@ -73,12 +73,12 @@ int main(){
     [12, 45, 7, 89, 23]
     Output: 89
 
-    time = O(n)
-    space = O(1)
+  
+   
   ******************************
-  Solution:
+  Solution:   time = O(n) ,  space = O(1)
   ******************************
-    int largest_number{numbers[0]};
+    int largest_number{numbers[0]}; // we are using first index incase values are negative (<0)
     for (int i{1};i<numbers.size();i++){
     if(numbers[i]>largest_number){
       largest_number = numbers[i];
@@ -99,9 +99,8 @@ int main(){
       [10, 20, 30]
     Don't put -1 into the vector.
    ******************************
-    Solution:
+    Solution:  Time O(n) , Space O(n) (because user input could affect spacing)
    ******************************
-  */
   vector<int>user_input{};
   int input_value{0};
 
@@ -122,6 +121,79 @@ int main(){
     cout << user_input[i] << endl;
   }
   
+  */
+  
+/*
+   ******************************
+    7. Separate Even and Odd Numbers
+      Given: [1, 2, 3, 4, 5, 6, 7, 8]
+      Create two vectors: Even: [even numbers] Odd: [Odd numbers]
+      using push_back();
+  ******************************
+    Solution: Time: O(n) Space : O(n)
+  ******************************
+  
+    vector<int>even_input{};
+    vector<int>odd_input{};
 
+
+    for(int i{0};i<numbers.size();i++){
+
+      if(numbers[i] % 2 == 0){
+        even_input.push_back(numbers[i]);
+      }
+      else{
+        odd_input.push_back(numbers[i]);
+      }
+    }
+    
+    cout << "Even Inputs" << endl;
+    for(int i{0};i<even_input.size();i++){
+        cout << even_input[i] << endl;
+    }
+
+    cout << "Odd Inputs" << endl;
+     for(int i{0};i<odd_input.size();i++){
+        cout << odd_input[i] << endl;
+    }
+*/
+
+/*
+   ******************************
+    8.Reverse a Vector
+    Input: [1, 2, 3, 4, 5]
+    Output: [5, 4, 3, 2, 1]
+    Try it without reverse().   
+   ******************************
+   Solution: Time: O(n) Space : O(1)
+  ******************************
+    vector<int> numbers{1, 2, 3, 4, 5, 6, 7, 8};
+    int temp{0};
+    int last_index = (numbers.size()-1);
+    
+    for(int i{0};i< (numbers.size() /2);i++){
+      temp = numbers[last_index];
+      numbers[last_index] = numbers[i];
+      numbers[i] = temp;
+      last_index--;
+    }
+
+    for(int i{0};i<numbers.size();i++){
+      cout << numbers[i] << endl;
+    }
+    
+   */
+
+   /*
+    ******************************
+    9. Find the Second Largest
+    Given a vector of integers: [10, 45, 23, 89, 67]
+    Output: 67
+    ******************************
+    Solution: 
+    ******************************
+    */
+   
+    
 }
 
