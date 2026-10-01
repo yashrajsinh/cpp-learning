@@ -190,10 +190,55 @@ int main(){
     Given a vector of integers: [10, 45, 23, 89, 67]
     Output: 67
     ******************************
-    Solution: 
+    Solution: Time : O(n) Space : O(1)
+    ******************************
+     vector<int> numbers {10, 45, 23, 89, 67};
+    int first_largest_number = numbers[0]; 
+    int second_largest_number{0}; 
+ 
+    if (second_largest > first_largest) {
+        int temp = first_largest;
+        first_largest = second_largest;
+        second_largest = temp;
+    }
+
+    for (int i{2}; i < numbers.size(); i++) {
+
+        if (numbers[i] > first_largest) {
+            second_largest = first_largest;
+            first_largest = numbers[i];
+        }
+        else if (numbers[i] > second_largest) {
+            second_largest = numbers[i];
+        }
+    }
+
+    cout << second_largest << endl;
+    /*
+    ******************************
+      10. Build a Vector Without Knowing Its Size
+      Ask the user how many numbers they want to enter:
+      How many numbers? ->
+      Enter Number n: ->
+      Print
+    ****************************** 
+      Solution:
     ******************************
     */
-   
-    
+
+    vector<int> user_inputs{};
+    int input_rage{0};
+    cout << "How many values would you like enter ->\t";
+    cin >> input_rage;
+    for(int i{0};i<input_rage;i++){
+      int temp{0};
+      cout << "\nEnter #" << i+1 << " Value ->\t";
+      cin >> temp;
+      user_inputs.push_back(temp);
+    }
+
+    for(int i{0};i<user_inputs.size();i++){
+        cout << user_inputs[i] << "\n" ;
+    }
 }
 
