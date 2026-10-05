@@ -222,10 +222,8 @@ int main(){
       Enter Number n: ->
       Print
     ****************************** 
-      Solution:
+      Solution: Time: O(n) Space: O(n)
     ******************************
-    */
-
     vector<int> user_inputs{};
     int input_rage{0};
     cout << "How many values would you like enter ->\t";
@@ -240,5 +238,7 @@ int main(){
     for(int i{0};i<user_inputs.size();i++){
         cout << user_inputs[i] << "\n" ;
     }
+    */
+ 
 }
 
