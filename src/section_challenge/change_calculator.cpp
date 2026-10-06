@@ -20,9 +20,8 @@ int main(){
     cout << "Enter amount in cents -> ";
     cin >> desired_amount;
 
-
     int dollars = desired_amount/ 100;
-   desired_amount %= 100;
+    desired_amount %= 100;
 
     int quaters = desired_amount / 25;
    desired_amount %= 25;
@@ -33,9 +32,8 @@ int main(){
     int nikles =  desired_amount / 5;
     desired_amount %= 5;
 
-    int pennis = desired_amount / 1;
-    desired_amount %= 1;
-
+    int pennis = desired_amount;
+   
     cout << "Dollars($1.00) : " << dollars << "\nQuaters($0.25) : " << quaters 
             << "\nDimes($0.10) : " << dimes << "\nNickles($0.05) : " << nikles 
             << "\nPennis($0.01) : " << pennis << endl;
