@@ -241,10 +241,5 @@ int main(){
     */
  //----WRITE YOUR CODE BELOW THIS LINE----
 
-    
-    if ((!accidents) && (ssn) && (age >18 || (age>15 && parental_consent) ) )//WRITE ALL YOUR CODE WITHIN THE PARENTHESES
-        cout << "Yes, you can work.";
-    //----WRITE YOUR CODE ABOVE THIS LINE----
-    return;
 }
 
