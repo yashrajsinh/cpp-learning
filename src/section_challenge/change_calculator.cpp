@@ -1,7 +1,44 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-
+/*
+******************************
+find first vowel 
+******************************
+Solution : Time O(n) Space : O(1)
+******************************
+    vector<char> vec{'f','r','a','n','k'};
+  int index{0};
+  bool isVowel = false;
+    
+    do{
+        ++index;
+        if(vec[index] == 'A' || vec[index] == 'a'){
+            cout << "Vowel found: " << vec[index];
+            isVowel = true;
+            break;
+        } else if(vec[index] == 'E' || vec[index] == 'e'){
+             cout << "Vowel found: " << vec[index];
+              isVowel = true;
+              break;
+        } else if(vec[index] == 'I' || vec[index] == 'i'){
+             cout << "Vowel found:" << vec[index];
+              isVowel = true;
+              break;
+        } else if(vec[index] == 'O' || vec[index] == 'o'){
+             cout << "Vowel found: " << vec[index];
+              isVowel = true;
+              break;
+        } else if(vec[index] == 'U' || vec[index] == 'u'){
+             cout << "Vowel found: " << vec[index];
+              isVowel = true;
+              break;
+        } 
+    }while(vec.size());
+    if(!isVowel){
+      cout << "No Vowel was found";
+    }
+*/
 /*
 ******************************
 Change caculator programme
@@ -40,8 +77,7 @@ Pennis (0.01)
             << "\nPennis($0.01) : " << pennis << endl;
 */
 
-int main(){
-    /*
+   /*
     Shipping Cost Calculator
 
     Ask the user for package dimension in inches
@@ -79,40 +115,30 @@ int main(){
      } 
     
     */
-    vector<char> vec{'f','r','a','n','k'};
-  int index{0};
-  bool isVowel = false;
+
+int main(){
+ /*
+ Nested Loops - Sum of the Product of all Pairs of Vector Elements
+Given a vector of integers named vec  that is provided for you, find the sum of the product of all pairs of vector elements.
+You should declare an integer variable named result  and store the final product in this variable.
+
+For example, given the vector  vec  to be c
+
+Another example:
+Given the vector vec  to be {2, 4, 6, 8} , the possible pairs are (2,4), (2,6), (2,8), (4,6), (4,8), and (6,8) .
+So the result would be (2*4) + (2*6) + (2*8) + (4*6) + (4*8) + (6*8) which is 140 .
+
+If the vector is empty or has only 1  element then the result  should be 0 .
+
+You can find my solution by clicking on the solution.txt file on the left pane. But please make sure you give it a go yourself first, and only check the solution if you really get stuck.
+ */
+
+ vector<int> vec{1,2,3,4,5,6};
+ int result{0};
+ int sum{0};
+ for(int i{0};i<vec.size();i++){
+    sum += vec[i];
+ }
+ cout << "Pair sum " << sum*vec.size();
     
-    do{
-        ++index;
-        if(vec[index] == 'A' || vec[index] == 'a'){
-            cout << "Vowel found: " << vec[index];
-            isVowel = true;
-            break;
-        } else if(vec[index] == 'E' || vec[index] == 'e'){
-             cout << "Vowel found: " << vec[index];
-              isVowel = true;
-              break;
-        } else if(vec[index] == 'I' || vec[index] == 'i'){
-             cout << "Vowel found:" << vec[index];
-              isVowel = true;
-              break;
-        } else if(vec[index] == 'O' || vec[index] == 'o'){
-             cout << "Vowel found: " << vec[index];
-              isVowel = true;
-              break;
-        } else if(vec[index] == 'U' || vec[index] == 'u'){
-             cout << "Vowel found: " << vec[index];
-              isVowel = true;
-              break;
-        } 
-    }while(vec.size());
-    if(!isVowel){
-      cout << "No Vowel was found";
-    }
-        
-   
-
-
-
 }
