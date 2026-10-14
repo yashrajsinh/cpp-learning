@@ -228,3 +228,105 @@ cout << "Sum : " << sum << "\nAverage : " << average
     cout << "Invalid Input!";
   }
 */
+
+/*
+   *************************************
+    8. — First Occurrence Given: {5,2,8,9,2}
+    Find the first and last occurance of given element
+   *************************************
+    Solution : Time: O(n) , Space: O(1)
+   *************************************
+     vector<int> vec{5, 2, 8, 9, 2};
+ int last_occurance{0}, first_occurance{0};
+ int value{2}, count{0};
+
+ for (int i{0}; i < vec.size(); ++i) {
+   if (vec[i] == value) {
+     if (count == 0) {
+       first_occurance = i;
+     }
+     last_occurance = i;
+     ++count;
+   }
+ }
+ (count > 0) ? cout << value << " Found at indexes " << first_occurance
+                    << " and " << last_occurance << "\n"
+             : cout << "Doesn't exist in vector";
+   */
+
+/*
+ *************************************
+     9. Move Zeros to the end of vector
+     Given: {0,1,2,4,0,5} to {1,2,4,5,0,0}
+ *************************************
+ Solution: Time: O(n) , Extra Spcae: O(1)
+ *************************************
+  vector<int> vec{0, 1, 2, 0, 5, 4};
+int pointer_index{0};
+
+for (int i{0}; i < vec.size(); i++) {
+
+ if (vec[i] != 0) {
+   int temp = vec[i];
+   vec[i] = vec[pointer_index];
+   vec[pointer_index] = temp;
+   ++pointer_index;
+ }
+}
+
+for (int i{0}; i < vec.size(); i++) {
+ cout << vec[i] << endl;
+}
+*/
+
+/*
+  *************************************
+    11. Second Largest Given: {10, 5, 20, 8, 15}
+    Find:   Second largest = 15
+    Try to do it in one pass.
+  *************************************
+  Solution: Time : O(n), Space: O(1)
+  *************************************
+   vector<int> vec{-10, -5, -20, -8, -15};
+  int first_largest_value;
+  int second_largest_value;
+
+  if (vec[0] > vec[1]) {
+    first_largest_value = vec[0];
+    second_largest_value = vec[1];
+  } else {
+    first_largest_value = vec[1];
+    second_largest_value = vec[0];
+  }
+
+  for (int i{2}; i < vec.size(); ++i) {
+    if (vec[i] > first_largest_value) {
+      second_largest_value = first_largest_value;
+      first_largest_value = vec[i];
+    } else if (vec[i] > second_largest_value) {
+      second_largest_value = vec[i];
+    }
+  }
+  cout << second_largest_value << "\n";
+  */
+
+/*
+*************************************
+ 13 — Remove Duplicates
+    Given: {1, 2, 2, 3, 4, 4, 5}
+    Produce: {1, 2, 3, 4, 5}
+*************************************************
+Solution 1 (brute force) Time : O(n2) Space O(1) For O(n) Time and Space we
+could use hashtables
+*************************************************
+for (int i{0}; i < elements.size(); i++) {
+  for (int j{i + 1}; j < elements.size();) {
+    if (elements[i] == elements[j]) {
+      elements.erase(elements.begin() + j);
+    } else {
+      ++j; //Only increment if duplicate not found
+    }
+  }
+}
+
+*/
