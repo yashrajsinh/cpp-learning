@@ -312,7 +312,7 @@ for (int i{0}; i < vec.size(); i++) {
 
 /*
 *************************************
- 13 — Remove Duplicates
+ 13. Remove Duplicates
     Given: {1, 2, 2, 3, 4, 4, 5}
     Produce: {1, 2, 3, 4, 5}
 *************************************************
@@ -330,3 +330,100 @@ for (int i{0}; i < elements.size(); i++) {
 }
 
 */
+
+/*
+*************************************
+  14. Pair Sum Given: vec = {2, 7, 11, 15} target = 9
+  Find whether two different elements add up to the target. 2 + 7 = 9
+  Output: Found / Not found
+*************************************
+ Solution : Time: O(n2) , Space: O(1)
+*************************************
+int target{9};
+
+for (int i{0}; i < elements.size(); ++i) {
+  for (int j{i + 1}; j < elements.size(); ++j) {
+    if (elements[i] + elements[j] == target) {
+      cout << elements[i] << " + " << elements[j] << " = " << target << "\n";
+      break;
+    }
+  }
+}
+*/
+
+/*
+   *************************************
+    15. Analyze a Vector Given : {4, -2, 7, 0, 7, 3, -2, 9, 0, 5}
+    Find:
+     1. Number of positive values
+     2. Number of negative values
+     3. Number of zeros
+     4. Largest value
+     5. Smallest value
+     6. Sum
+     7. Average
+     8. First occurrence of 7
+     9. Last occurrence of 7
+     10. Whether the vector is sorted
+     11. Whether any value occurs more than once
+   *************************************
+     Solution : Time: O(n2) (worst case due to nested loop) Space: O(1)
+   *************************************
+vector<int> vec{4, -2, 7, 0, 7, 3, -2, 9, 0, 5};
+ int postive_numbers{0}, negative_numbers{0}, zeros{0}, sum{0};
+ int first_occurance_index{-1}, last_occurance_index{-1};
+
+ int first_vector_index = vec[0];
+ int first_smallest_value = vec[0];
+ bool isSorted{true}, isDuplicate{false};
+
+ for (int i{0}; i < vec.size(); ++i) {
+   sum += vec[i]; // sum
+
+   // postiive,negative or zero
+   if (vec[i] > 0) {
+     ++postive_numbers;
+   } else if (vec[i] < 0) {
+     ++negative_numbers;
+   } else {
+     ++zeros;
+   }
+   // largest value
+   if (vec[i] > first_vector_index) {
+     first_vector_index = vec[i];
+   }
+   // smallest value
+   if (vec[i] < first_smallest_value) {
+     first_smallest_value = vec[i];
+   }
+   // first and last index of 7
+   if (vec[i] == 7) {
+     if (first_occurance_index == -1) {
+       first_occurance_index = i;
+     }
+     last_occurance_index = i;
+   }
+   // comapre if sorted
+   if (i <= vec.size() - 2 && vec.size() >= 2) {
+     if (vec[i] > vec[i + 1]) {
+       isSorted = false;
+     }
+   }
+   // check if duplicates
+   for (int j{i + 1}; j < vec.size() && !isDuplicate; ++j) {
+     if (vec[i] == vec[j]) {
+       isDuplicate = true;
+     }
+   }
+ }
+
+ cout << "Positive elements : " << postive_numbers
+      << "\nNegative elements : " << negative_numbers << "\nZeros : " << zeros
+      << "\nSum is : " << sum << "\nAverage : " << (sum / vec.size())
+      << "\nLargest Element : " << first_vector_index
+      << "\nSmallest Element : " << first_smallest_value
+      << "\nFirst index for 7 : " << first_occurance_index
+      << "\nLast occurance of 7 : " << last_occurance_index
+      << "\nIs vector sorted : " << isSorted
+      << "\nAny value occurs more than once : " << isDuplicate << endl;
+   */
