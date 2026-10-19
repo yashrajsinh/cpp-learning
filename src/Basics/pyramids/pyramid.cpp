@@ -2,25 +2,7 @@
 #include <string>
 using namespace std;
 
-int main() {
-  int height{4};
-  std::string elements{"ABCD"};
-
-  for (int i{0}; i < height; ++i) {
-
-    // Print leading spaces
-    for (int j{0}; j < height - 1 - i; ++j) {
-      std::cout << " ";
-    }
-
-    // Print stars
-    for (int k{0}; k < 2 * i + 1; ++k) {
-      std::cout << elements[i];
-    }
-
-    std::cout << "\n";
-  }
-}
+int main() {}
 
 /*
 *****************
@@ -65,3 +47,29 @@ ABCBA
 Solution:
 *****************
 */
+
+/*
+*****************
+  A
+ BBB
+CCCCC
+DDDDDDD
+*****************
+int height{4};
+ std::string elements{"ABCD"};
+
+ for (int i{0}; i < height; ++i) {
+
+   // Print leading spaces
+   for (int j{0}; j < height - 1 - i; ++j) {
+     std::cout << " ";
+   }
+
+   // Print stars
+   for (int k{0}; k < 2 * i + 1; ++k) {
+     std::cout << elements[i];
+   }
+
+   std::cout << "\n";
+ }
+ */
