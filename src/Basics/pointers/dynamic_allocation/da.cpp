@@ -1,70 +1,34 @@
 #include <iostream>
-int *input_array(int size); // func to create an array with pointer and return
-void print_array(const int *arr, int size);
-void find_min_and_max(int *arr, int size);
-void find_sum(int *arr, int size);
-void reversed_array(int *arr, int size);
+#include <vector>
+
+void SwapInts(int &a, int &b) {
+  int temp{0};
+  temp = b;
+  b = a;
+  a = temp;
+}
+
+std::vector<int> SortVec(std::vector<int> vec) {
+  for (int i{0}; i < vec.size(); ++i) {
+    for (int j{0}; j < vec.size() - i - 1; ++j) {
+      if (vec[j] > vec[j + 1]) {
+        SwapInts(vec[j], vec[j + 1]);
+      }
+    }
+  }
+  for (auto a : vec) {
+    std::cout << a << "\n";
+  }
+  return vec;
+}
 
 int main() {
-  int size;
-  std::cout << "Enter the size of array not more than 7 : ";
-  std::cin >> size;
-  int *arr = input_array(size);
-  print_array(arr, size);
-  find_min_and_max(arr, size);
-  find_sum(arr, size);
-  reversed_array(arr, size);
-  delete[] arr;
-}
-
-int *input_array(int size) {
-  int *arr = new int[size];
-  for (size_t i{0}; i < size; ++i) {
-    std::cout << "Enter value #" << i << " : ";
-    std::cin >> *(arr + i);
-  }
-  return arr; // return memory address
-}
-
-void print_array(const int *arr, int size) {
-  for (size_t i{0}; i < size; ++i) {
-    std::cout << *(arr + i) << "\n";
-  }
-}
-
-void find_min_and_max(int *arr, int size) {
-  int min = *(arr + 0);
-  int max = *(arr + 0);
-  for (size_t i{1}; i < size; ++i) {
-    if (*(arr + i) > max) {
-      max = *(arr + i);
-    }
-    if (*(arr + i) < min) {
-      min = *(arr + i);
-    }
-  }
-  std::cout << "Min : " << min << "\n" << "Max : " << max << "\n";
-}
-
-void find_sum(int *arr, int size) {
-  int sum{0};
-  for (size_t i{0}; i < size; ++i) {
-    sum += *(arr + i);
-  }
-  std::cout << "Sum is : " << sum << "\n";
-}
-
-void reversed_array(int *arr, int size) {
-  int temp{0};
-  int reverse_index = size - 1;
-  for (size_t i{0}; i < size / 2; ++i) {
-    temp = *(arr + reverse_index);
-    *(arr + reverse_index) = *(arr + i);
-    *(arr + i) = temp;
-    --reverse_index;
-  }
-  std::cout << "Reversed array\n";
-  print_array(arr, size);
+  int x{21}, y{36};
+  // std::cout << " X " << x << " Y " << y << "\n";
+  SwapInts(x, y);
+  // std::cout << " X " << x << " Y " << y << "\n";
+  std::vector<int> vec{11, 4, 3, 10};
+  SortVec(vec);
 }
 
 /*
@@ -180,4 +144,100 @@ Solution :
 ************************************************************
 Solution :
 ************************************************************
+
+
+int *input_array(int size); // func to create an array with pointer and return
+void print_array(const int *arr, int size);
+void find_min_and_max(int *arr, int size);
+void find_sum(int *arr, int size);
+void reversed_array(int *arr, int size);
+
+
+int *input_array(int size) {
+  int *arr = new int[size];
+  for (size_t i{0}; i < size; ++i) {
+    std::cout << "Enter value #" << i << " : ";
+    std::cin >> *(arr + i);
+  }
+  return arr; // return memory address
+}
+
+void print_array(const int *arr, int size) {
+  for (size_t i{0}; i < size; ++i) {
+    std::cout << *(arr + i) << "\n";
+  }
+}
+
+void find_min_and_max(int *arr, int size) {
+  int min = *(arr + 0);
+  int max = *(arr + 0);
+  for (size_t i{1}; i < size; ++i) {
+    if (*(arr + i) > max) {
+      max = *(arr + i);
+    }
+    if (*(arr + i) < min) {
+      min = *(arr + i);
+    }
+  }
+  std::cout << "Min : " << min << "\n" << "Max : " << max << "\n";
+}
+
+void find_sum(int *arr, int size) {
+  int sum{0};
+  for (size_t i{0}; i < size; ++i) {
+    sum += *(arr + i);
+  }
+  std::cout << "Sum is : " << sum << "\n";
+}
+
+void reversed_array(int *arr, int size) {
+  int temp{0};
+  int reverse_index = size - 1;
+  for (size_t i{0}; i < size / 2; ++i) {
+    temp = *(arr + reverse_index);
+    *(arr + reverse_index) = *(arr + i);
+    *(arr + i) = temp;
+    --reverse_index;
+  }
+  std::cout << "Reversed array\n";
+  print_array(arr, size);
+}
+
+*/
+
+/*
+************************************************************
+ 6. Write a program that:
+- Declares an integer pointer initialized to nullptr.
+- Checks whether it is null.
+- Dynamically allocates an integer.
+- Assigns a value.
+- Prints the value.
+- Deletes the allocated memory.
+- Sets the pointer back to nullptr.
+- Checks whether it is null again.
+************************************************************
+Solution :
+************************************************************
+bool check_null_pointer(int *ptr);
+int main() {
+  int *ptr = nullptr;
+  std::cout << check_null_pointer(ptr);
+  ptr = new int(5);
+  std::cout << "\nInitialzing array of 5 with values\n";
+  for (size_t i{0}; i < 5; ++i) {
+    *(ptr + i) = (i + 1 * 20);
+  }
+  std::cout << check_null_pointer(ptr);
+  std::cout << "\nPrinting array...\n[";
+  for (size_t i{0}; i < 5; ++i) {
+    std::cout << *(ptr + i) << ", ";
+  }
+  std::cout << "]\n";
+  delete ptr;
+  ptr = nullptr;
+  std::cout << check_null_pointer(ptr) << "\n";
+}
+bool check_null_pointer(int *ptr) { return (ptr == nullptr); }
+
 */
