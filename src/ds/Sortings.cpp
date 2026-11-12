@@ -20,7 +20,6 @@ std::vector<int> SortVec(std::vector<int> vec) {
 }
 
 void printVector(const std::vector<int> &vec) {
-
   for (auto a : vec) {
     std::cout << a << ", ";
   }
@@ -40,7 +39,7 @@ int main() {
 ********************************
 Bubble sort
 ********************************
-
+Solution: Time: O(n)2 Space: O(n)
 ********************************
 
 */
