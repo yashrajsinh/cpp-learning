@@ -1,35 +1,7 @@
 #include <iostream>
 #include <vector>
 
-void SwapInts(int &a, int &b) {
-  int temp{0};
-  temp = b;
-  b = a;
-  a = temp;
-}
-
-std::vector<int> SortVec(std::vector<int> vec) {
-  for (int i{0}; i < vec.size(); ++i) {
-    for (int j{0}; j < vec.size() - i - 1; ++j) {
-      if (vec[j] > vec[j + 1]) {
-        SwapInts(vec[j], vec[j + 1]);
-      }
-    }
-  }
-  for (auto a : vec) {
-    std::cout << a << "\n";
-  }
-  return vec;
-}
-
-int main() {
-  int x{21}, y{36};
-  // std::cout << " X " << x << " Y " << y << "\n";
-  SwapInts(x, y);
-  // std::cout << " X " << x << " Y " << y << "\n";
-  std::vector<int> vec{11, 4, 3, 10};
-  SortVec(vec);
-}
+int main() {}
 
 /*
  ************************************
