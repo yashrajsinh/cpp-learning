@@ -24,7 +24,6 @@ std::string reverse_string(const std::string &str) {
 int main() {
   size_t size{};
   std::string s = {"Ga Sung Li!"};
-  std::cout << s;
 }
 
 /*
