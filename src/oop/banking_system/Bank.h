@@ -13,5 +13,4 @@ public:
   void withdraw(double amount);
   void display_balance();
 };
-
 #endif

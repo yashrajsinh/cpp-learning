@@ -19,5 +19,6 @@ void Bank::withdraw(double amount) {
 }
 
 void Bank::display_balance() {
-  std::cout << "Hi your current balance is : " << balance << "\n";
+  std::cout << "Hi, " << account_holder_name << "\nyour current balance is : $"
+            << balance << "\n";
 }
