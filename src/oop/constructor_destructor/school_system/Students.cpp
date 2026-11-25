@@ -1,11 +1,11 @@
 #include "Students.h"
 #include <iostream>
 // Default one
-Students::Students() : student_name("Unknown"), student_age(0) {
+Students::Students() : student_name{"Unknown"}, student_age{0} {
   std::cout << "\nDefault called";
 }
 // Parameter
-Students::Students(std::string nm, int ag) : student_name(nm), student_age(ag) {
+Students::Students(std::string nm, int ag) : student_name{nm}, student_age{ag} {
   std::cout << "\nParameter once called.";
 }
 
