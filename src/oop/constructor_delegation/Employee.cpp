@@ -5,14 +5,14 @@ Employee::Employee() : Employee("Unknown", 0, 0) {
   std::cout << "\nDefault called.";
 } // Default
 
-Employee::Employee(std::string nm) : Employee(nm, 0, 0.0) {
+Employee::Employee(std::string nm) : Employee(nm, 18, 25000.0) {
   std::cout << "\nWith name called.";
 } // with name
 
 Employee::Employee(std::string nm, int age, double salary)
-    : emp_name(nm), emp_age(age), emp_salary(salary) {
+    : emp_name{nm}, emp_age{age}, emp_salary{salary} {
   std::cout << "\nThree parameter called.";
-} // with all 3 params
+} // with all 3 params also it's initilizaiton list
 
 Employee::~Employee() {
   std::cout << "\nDestructor called for " << emp_name;
